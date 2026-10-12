@@ -91,43 +91,121 @@
 // console.log(obj);
 // console.log(obj.email);
 // console.log(obj.info.sports[1]);
-// console.log(obj.info);
-const arr = [1,2,3,4,5,6,7,8,9];
-//variable with a value ; condition ; inc/dec the variable
-for ( let i = 0 ; i < arr.length ; i++){
-  console.log("On index ", i , "Value is ", arr[i]);
-}
-for (let i = 1 ; i <= 10 ; i++){
-  console.log("2*",i,"=",(2*i)); 
-}
-const newarr = arr.map((currentValue, index)=>{// map returns new array wihtout changing the orginial one
-  console.log("On index" , index," value is " , currentValue );
-  return currentValue*index;
-});
-console.log(arr);
-console.log(newarr);
-//== only value ,  ==== dataype plus value
-//filter-- conditions 
-const evenNo = arr.filter((currentValue, index)=> {
-  return currentValue % 2 == 0;
-});
-console.log(evenNo);
-const primeno = arr.filter((currentValue , index)=> {
-  let count = 0;
-  for (let i = 0 ; i <= currentValue ; i++){
-    if(currentValue % i == 0){
-      count++;
-    }
+// // console.log(obj.info);
+// const arr = [1,2,3,4,5,6,7,8,9];
+// //variable with a value ; condition ; inc/dec the variable
+// for ( let i = 0 ; i < arr.length ; i++){
+//   console.log("On index ", i , "Value is ", arr[i]);
+// }
+// for (let i = 1 ; i <= 10 ; i++){
+//   console.log("2*",i,"=",(2*i)); 
+// }
+// const newarr = arr.map((currentValue, index)=>{// map returns new array wihtout changing the orginial one
+//   console.log("On index" , index," value is " , currentValue );
+//   return currentValue*index;
+// });
+// console.log(arr);
+// console.log(newarr);
+// //== only value ,  ==== dataype plus value
+// //filter-- conditions 
+// const evenNo = arr.filter((currentValue, index)=> {
+//   return currentValue % 2 == 0;
+// });
+// console.log(evenNo);
+// const primeno = arr.filter((currentValue , index)=> {
+//   let count = 0;
+//   for (let i = 0 ; i <= currentValue ; i++){
+//     if(currentValue % i == 0){
+//       count++;
+// //     }
+// //   }
+// //   if(count == 2){
+// //   return currentValue }
+// // });
+// // console.log(primeno);
+// // //reduce - single element
+// // const sumofAll = arr.reduce((accumulator , currentValue , index)=>{
+// //   return accumulator + currentValue;
+// // }, 0);
+// // console.log(sumofAll);
+// //TYPES OF SELECTOR 
+// //1. TAG SELECTOR 
+// //return an array 
+// //htmlcollection type of array
+// let h1 = document.getElementsByTagName("h1");
+// console.log(h1[1]);
+// //2. CLASS SELECTOR -- multiple types of elements
+// //return an array 
+// //htmlcollection type of array 
+// let a = document.getElementsByClassName("a");
+// console.log(a[1]);
+// //3.ID SELECTOR 
+// //returns a single and first value 
+// let idSelector = document.getElementById("b");
+// console.log(idSelector);
+// //4.QUERY SELECTOR 
+// //returns a single and first value..class..id..and tag can be used 
+// let data = document.querySelector("#b");
+// console.log(data);
+// //5.QUERYSELECTORALL
+// //returns an array of type NODELIST 
+// let Mydata= document.querySelectorAll("#b");
+// console.log(Mydata[1]);
+
+// //Read and write opretions 
+// console.log(Mydata[1].textContent);
+// Mydata[1].textContent = "written by DOM";
+// //STYLING
+// Mydata[1].style.color="pink";
+// Mydata[1].style.backgroundColor="purple";//applied as inline css automatically
+
+
+//ADD/REMOVE/TOGGLE
+// let heading = document.querySelectorAll("h1");
+// heading[1].classList.add("c");
+// heading[1].classList.remove("b");
+//  heading[1].classList.remove("c");
+
+//  let bt = document.querySelector("button");
+
+//  bt.addEventListener("click" , ()=> {
+//   console.log("btn clicked ");
+//   heading[1].classList.toggle("c");
+//   document.body.classList.toggle("e");
+  
+//  });
+
+//  let input=document.querySelector("input");
+//  let btn = document.querySelector(".g");
+//  let ol = document.querySelector("ol");
+
+//  btn.addEventListener("click", ()=>{
+//   if(input.value!=""){
+//     let li = document.createElement("li");
+//     li.textContent = input.value;
+//     ol.appendChild(li);
+//     input.value="";
+//   }
+//  });
+ 
+ let inp = document.querySelector("input");
+ let btn = document.querySelector("addData");
+ let table = document.querySelector("table");
+
+ btn.addEventListener("click", ()=>{
+  if(inp.value!=""){
+    let td = document.createElement("td");
+    td.textContent = inp.value;
+    td.appendChild(td);
+    inp.value="";
   }
-  if(count == 2){
-  return currentValue }
-});
-console.log(primeno);
-//reduce - single element
-const sumofAll = arr.reduce((accumulator , currentValue , index)=>{
-  return accumulator + currentValue;
-}, 0);
-console.log(sumofAll);
+ })
+
+
+ 
+
+
+
 
 
 

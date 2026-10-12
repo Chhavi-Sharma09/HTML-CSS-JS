@@ -230,6 +230,12 @@ console.log(count);
 console.log(avg);
 
 // - Find student with highest project rating overall.
+// let highestR = 0;
+// for ( let i = 0; i < students.length ; i++){
+//   for (let j =  0 ; j < students.projects.length; j++){
+//     if()
+//   }
+// }
 // - Count students per course.
 // - Total number of skills across all students.
 // - Get all unique skills.
