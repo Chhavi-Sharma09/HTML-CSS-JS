@@ -1,24 +1,24 @@
 
-// // //HOISTING (ONLY IN VAR: UNDEFINED)
-// // //GLOBAL SCOPE
-// // var a= 10;
-// // console.log(a);
-// // //LET
-// // //BLOCK SCOPE
-// // //console.log(b);
-// // //referror-- lines after it wont run
-// // //TDZ(temporal dead zone)
-// // let b = 20;
-// // console.log(b);
-// // // {
-// // // var a= "hi";
-// // // console.log(a);
-// // // let b = "hello";
-// // // console.log(b);
+// //HOISTING (ONLY IN VAR: UNDEFINED)
+// //GLOBAL SCOPE
+// var a= 10;
+// console.log(a);
+// //LET
+// //BLOCK SCOPE
+// //console.log(b);
+// //ref error-- lines after it wont run
+// //TDZ(temporal dead zone)
+// let b = 20;
+// console.log(b);
+// {
+// var a= "hi";
+// console.log(a);
+// let b = "hello";
+// console.log(b);
 
-// // // }
-// // console.log(a);// hi
-// // console.log(b);//20
+// }
+// console.log(a);// hi
+// console.log(b);//20
 
 // // const c = 30;
 // // console.log(c);
@@ -29,14 +29,14 @@
 //  //STATIC FUNCTIONS:-----(5) SAME VALUES EVERYTIME
 //  //1. NAMED FUNCTIONS
 //  //a();
-//  function a(){
+//  function a(){ // phle b call kr skte no error
 //   console.log("HELL WORLD 1");
 //   console.log("HELL WORLD 2");
 //   console.log("HELL WORLD 3");
 //   console.log("HELL WORLD 4");
 //  }
 //  a();
-//  //2 FUNCTIONS EXPRESSION
+//  //2 FUNCTION EXPRESSION// function ki prop to var,, baki ref error in let nd const
 //  //b();//type error
 //  var b=function(){
 //   console.log("fn exp");
@@ -49,13 +49,14 @@
 //  }
 //  c();
 // //4. CALL BACK FN (ANONYMOUS FN)
-// //5. IIFE (IMMEDIATELY INVOKED FUNCTION EXPRESSION)
+// //5. IIFE (IMMEDIATELY INVOKED FUNCTION EXPRESSION)// arguments , no identity , no reuseable for both,,call kre ki no requirement
 // (function(){
 //   console.log("IIFE AND CALLBACK")
 // })();
 // (()=>{//arrow fn can also be used
 //   console.log("IIFE AND CALLBACK")
 // })();
+//dynamic fn
 // function sumOfTwo(param1=2, param2=1){// parameters nd setting their default values 
 //   console.log("value of parameter1", param1);
 //   console.log("value of parameter2", param2);
@@ -63,7 +64,28 @@
 // }
 // sumOfTwo(1,1);
 // sumOfTwo(2,2);
-// sumOfTwo();
+// sumOfTwo();// undef nd NaN errors.
+//CALCULATOR 
+let cal = (par1="add",par2=2,par3=4)=> {
+  if(par1==="add"){
+    console.log(par2+par3);
+  }else if(par1==="sub"){
+    console.log(par2-par3);
+  }else if(par1==="mul"){
+    console.log(par2*par3);
+  }else if(par1==="div"){
+    if(par3!=0){
+    console.log(par2/par3);}
+    else{
+      console.log("Division by 0 is not possible.");
+      
+    }
+  }
+
+}
+cal("sub", 4,3);
+cal("div" , 3, 0);
+cal ("mul" , 9 , 10);
 // const arr = [1,2,3,"chhavi"];
 // console.log(arr);
 // console.log(arr[3]);
@@ -188,18 +210,18 @@
 //   }
 //  });
  
- let inp = document.querySelector("input");
- let btn = document.querySelector("addData");
- let table = document.querySelector("table");
+//  let inp = document.querySelector("input");
+//  let btn = document.querySelector("addData");
+//  let table = document.querySelector("table");
 
- btn.addEventListener("click", ()=>{
-  if(inp.value!=""){
-    let td = document.createElement("td");
-    td.textContent = inp.value;
-    td.appendChild(td);
-    inp.value="";
-  }
- })
+//  btn.addEventListener("click", ()=>{
+//   if(inp.value!=""){
+//     let td = document.createElement("td");
+//     td.textContent = inp.value;
+//     td.appendChild(td);
+//     inp.value="";
+//   }
+//  })
 
 
  

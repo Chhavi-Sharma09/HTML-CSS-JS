@@ -230,16 +230,21 @@ console.log(count);
 console.log(avg);
 
 // - Find student with highest project rating overall.
-// let highestR = 0;
-// for ( let i = 0; i < students.length ; i++){
-//   for (let j =  0 ; j < students.projects.length; j++){
-//     if()
-//   }
-// }
+let highestR = 0;
+for ( let i = 0; i < students.length ; i++){
+  for (let j =  0 ; j < students[i].projects.length; j++){
+    if(students[i].projects[j].rating>highestR){
+      highestR= students[i].projects[j].rating;
+    }
+  }
+}
+console.log(highestR);
+
 // - Count students per course.
+
 // - Total number of skills across all students.
 // - Get all unique skills.
-// - Find top-rated project among all students.
+// - Find top-rated project among all students.[already done above]
 // - Group students by city.
 // - Get students sorted by average marks (descending).
 // - Check if every student has at least one skill.
